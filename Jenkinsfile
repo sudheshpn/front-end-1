@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'npm package'
-                archiveArtifacts artifacts: './distribution/build/*.jar: true
+                archiveArtifacts artifacts: '../distribution/build/*.jar: true
             }
         }
     }
