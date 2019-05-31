@@ -1,0 +1,7 @@
+version: "3.3"
+services:
+  frontend:
+    build: .
+    image: sudheshpn/frontend:latest
+    ports:
+      - 8079
