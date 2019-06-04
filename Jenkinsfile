@@ -24,7 +24,7 @@ pipeline {
     stage('Install Moca Save') {
             steps {
                 echo 'Installing Mocha module..'
-                sh 'npm install request --save'
+                sh 'npm install mocha --save-dev  '
             }
         }        
         stage('Test') {
