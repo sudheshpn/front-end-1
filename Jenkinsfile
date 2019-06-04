@@ -29,7 +29,7 @@ pipeline {
                 echo 'Deploying....'
                 sh 'npm run package'
                 dir('distribution') {
-                archiveArtifacts artifacts: './distribution/*.zip', fingerprint: true
+                 archiveArtifacts artifacts: '**/distribution/*.zip', fingerprint: true
             }
         }
     }
