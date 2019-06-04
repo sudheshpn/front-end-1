@@ -23,14 +23,7 @@ pipeline {
             }
         }        
  
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-                sh 'npm test'
-            }
-        }
-        
- 
+
         stage('Package') {
             steps {
                 echo 'Deploying....'
