@@ -2,34 +2,21 @@ pipeline {
     agent any
       tools {nodejs "node"}
     stages {
-        stage('Build') {
+        stage('Install') {
             steps {
-                echo 'Building..'
-                sh 'npm build'
+                echo 'Install..'
+                sh 'npm install'
             }
         }
 
-    stage('Install Moca') {
+    stage('Build') {
             steps {
-                echo 'Installing Mocha module..'
-                sh 'npm install -g mocha'
+                echo 'Building Nodejs APP..'
+                sh 'npm build
             }
         }     
         
-    stage('Install Moca Save') {
-            steps {
-                echo 'Installing Mocha module..'
-                sh 'npm install mocha --save-dev  '
-            }
-        }        
-
-     stage('Install') {
-            steps {
-                echo 'Installing Instambul module..'
-                sh 'npm install --save-dev coveralls istanbul'
-            }
-        }   
-        stage('Test') {
+     stage('Test') {
             steps {
                 echo 'Testing..'
                 sh 'npm test'
