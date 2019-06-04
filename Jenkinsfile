@@ -12,7 +12,7 @@ pipeline {
     stage('Build') {
             steps {
                 echo 'Building Nodejs APP..'
-                sh 'npm build
+                sh 'npm build'
             }
         }     
         
