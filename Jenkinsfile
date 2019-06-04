@@ -24,11 +24,10 @@ pipeline {
         }        
  
 
-        stage('Package') {
+        stage('Install') {
             steps {
                 echo 'Deploying....'
-                sh 'npm package'
-                archiveArtifacts artifacts: '**/distribution/*.jar', fingerprint: true
+                sh 'npm Install'
             }
         }
     }
