@@ -27,7 +27,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo 'Deploying....'
-                sh 'npm package'
+                sh 'npm run package'
                 archiveArtifacts artifacts: '**/distribution/*.jar', fingerprint: true
             }
         }
