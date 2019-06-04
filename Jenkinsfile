@@ -8,6 +8,13 @@ pipeline {
                 sh 'npm build'
             }
         }
+    stage('Install') {
+            steps {
+                echo 'Installing Instambul module..'
+                sh 'npm install -g istanbul'
+            }
+        }    
+        
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -23,3 +30,4 @@ pipeline {
         }
     }
 }
+
