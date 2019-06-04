@@ -26,7 +26,7 @@ pipeline {
      stage('Install') {
             steps {
                 echo 'Installing Instambul module..'
-                sh 'npm install --save-dev istanbul'
+                sh 'npm install --save-dev coveralls istanbul'
             }
         }   
         stage('Test') {
