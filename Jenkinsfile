@@ -8,12 +8,7 @@ pipeline {
                 sh 'npm build'
             }
         }
-    stage('Install') {
-            steps {
-                echo 'Installing Instambul module..'
-                sh 'npm install coveralls --save-dev'
-            }
-        }    
+
     stage('Install Moca') {
             steps {
                 echo 'Installing Mocha module..'
@@ -33,6 +28,13 @@ pipeline {
                 sh 'npm test'
             }
         }
+        
+            stage('Install') {
+            steps {
+                echo 'Installing Instambul module..'
+                sh 'npm install coveralls --save-dev'
+            }
+        } 
         stage('Package') {
             steps {
                 echo 'Deploying....'
