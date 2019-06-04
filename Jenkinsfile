@@ -14,7 +14,19 @@ pipeline {
                 sh 'npm install coveralls --save-dev'
             }
         }    
+    stage('Install Moca') {
+            steps {
+                echo 'Installing Mocha module..'
+                sh 'npm install -g mocha'
+            }
+        }     
         
+    stage('Install Moca Save') {
+            steps {
+                echo 'Installing Mocha module..'
+                sh 'npm install request --save'
+            }
+        }        
         stage('Test') {
             steps {
                 echo 'Testing..'
