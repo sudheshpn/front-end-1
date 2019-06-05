@@ -32,6 +32,7 @@ pipeline {
                  archiveArtifacts artifacts: '*.zip', fingerprint: true
             }
         }
+        }
         stage('Start') {
             steps {
                 echo 'Starting Nodejs app....'
