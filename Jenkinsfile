@@ -36,6 +36,7 @@ pipeline {
             steps {
                 echo 'Starting Nodejs app....'
                 sh 'npm start'
-            }
+              }
         }
-     
+    }
+}
