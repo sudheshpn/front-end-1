@@ -33,11 +33,18 @@ pipeline {
             }
         }
         }
-        stage('Start') {
+        stage('Build Docker Image') {
+            when {
+                branch 'master'
+            }
             steps {
-                echo 'Starting Nodejs app....'
-                sh 'npm start'
-              }
+                script {
+                    app = docker.build("sudheshpn/frontend")
+                    app.inside {
+                        sh 'echo $(curl localhost:8079)'
+                    }
+                }
+            }
         }
     }
 }
