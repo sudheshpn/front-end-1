@@ -39,9 +39,19 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("sudheshpn/frontend")
+                    app = docker.build("sudheshpn/train-schedule")
                     app.inside {
                         sh 'echo $(curl localhost:8079)'
+                    }
+                }
+            }
+        }
+
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker_hub_login') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest")
                     }
                 }
             }
