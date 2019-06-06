@@ -74,7 +74,7 @@ pipeline {
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
                     kubeConfig: [path: '/var/lib/jenkins/workspace/.kube/config'],
-                    configs: 'frontend.yml',
+                    configs: 'frontend.yaml',
                     enableConfigSubstitution: true
                 )
             }
