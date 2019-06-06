@@ -8,8 +8,8 @@ spec:
     app: frontend
   ports:
   - protocol: TCP
-    port: 8079
-    targetPort: 80
+    port: 80
+    targetPort: 8079
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -22,7 +22,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
-  template:
+  template: 
     metadata:
       labels:
         app: frontend
