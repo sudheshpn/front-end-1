@@ -39,7 +39,7 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("sudheshpn/train-schedule")
+                    app = docker.build("sudheshpn/frontend")
                     app.inside {
                         sh 'echo $(curl localhost:8079)'
                     }
