@@ -4,7 +4,7 @@ pipeline {
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "sudheshpn/frontend"
-      
+    }
     stages {
         stage('Install') {
             steps {
