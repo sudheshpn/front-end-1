@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        //be sure to replace "willbla" with your own Docker Hub username
+        DOCKER_IMAGE_NAME = "sudheshpn/frontend"
       tools {nodejs "node"}
     stages {
         stage('Install') {
@@ -39,8 +42,8 @@ pipeline {
             }
             steps {
                 script {
-                    app = docker.build("sudheshpn/frontend")
-                    app.inside {
+                        app = docker.build(DOCKER_IMAGE_NAME)                   
+                        app.inside {
                         sh 'echo $(curl localhost:8079)'
                     }
                 }
