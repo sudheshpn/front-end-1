@@ -1,9 +1,10 @@
 pipeline {
     agent any
+    tools {nodejs "node"}
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "sudheshpn/frontend"
-      tools {nodejs "node"}
+      
     stages {
         stage('Install') {
             steps {
